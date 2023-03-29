@@ -39,9 +39,10 @@ public class CelebrityGame {
 	 *         spaces.
 	 */
 	public boolean processGuess(String guess) {
-		guess = guess.trim().toLowerCase();
+		boolean matches = false;
+		String guess1 = guess.trim().toLowerCase();
 
-			if(guess.equals(gameCelebrity.getAnswer())){
+			if(guess1.equals(gameCelebrity.getAnswer().toLowerCase())){
 				celebGameList.remove(0);
 				if(celebGameList.size()>0){
 					gameCelebrity = celebGameList.get(0);
@@ -49,8 +50,10 @@ public class CelebrityGame {
 					gameCelebrity = new Celebrity("","");
 				}
 				return true;
+			}else{
+				return false;
 			}
-		return false;
+
 	}
 
 	/**
