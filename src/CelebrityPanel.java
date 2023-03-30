@@ -186,8 +186,10 @@ public class CelebrityPanel extends JPanel implements ActionListener{
     guessButton.addActionListener(this);
     countdownTimer.addActionListener(this);
     countdownTimer.start();
+    resetButton.addActionListener(this);
   }
-  
+
+
   /**
    * Helper method for when the ActionListener attached to the timer fires.
    * Sets the text of the label to match the remaining time and a message at
@@ -214,6 +216,10 @@ public class CelebrityPanel extends JPanel implements ActionListener{
       String text = clickedButton.getText();
       if(text.equals("Submit guess")){
         updateScreen();
+      }else if(text.equals("Start again")){
+        controller.reset();
+        CelebrityGame G = new CelebrityGame();
+
       }
     }else if( source instanceof Timer){
       timerFires();
@@ -262,6 +268,7 @@ public class CelebrityPanel extends JPanel implements ActionListener{
       guessButton.setEnabled(false);
       guessField.setEnabled(false);
     }
+
 
   }
 }

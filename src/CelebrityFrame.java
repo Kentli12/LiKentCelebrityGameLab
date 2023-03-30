@@ -43,6 +43,8 @@ public class CelebrityFrame extends JFrame {
 		setupFrame();
 
 	}
+
+
 	
 	/**
 	 * Configures the JFrame window subclass to add the panel and set size based information.
@@ -87,5 +89,14 @@ public class CelebrityFrame extends JFrame {
 		cardLayout.show(panelCards, screen);
 
 
+	}
+
+	public void reset1(){
+		dispose();
+	}
+
+	public void resetS(){
+		startPanel.reset();
+		setupFrame();
 	}
 }

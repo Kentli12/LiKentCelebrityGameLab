@@ -30,6 +30,17 @@ public class CelebrityGame {
 		gameCelebrity = null;
 	}
 
+	public void reset(){
+		gameWindow.reset1();
+	}
+
+	public void resetS(){
+		celebGameList = new ArrayList<Celebrity>();
+		gameWindow = new CelebrityFrame(this);
+		gameCelebrity = null;
+		gameWindow.resetS();
+	}
+
 	/**
 	 * Determines if the supplied guess is correct.
 	 * 
@@ -67,6 +78,8 @@ public class CelebrityGame {
 			gameWindow.replaceScreen("GAME");
 		}
 	}
+
+
 
 	/**
 	 * Adds a Celebrity of specified type to the game list
